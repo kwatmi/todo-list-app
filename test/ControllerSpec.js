@@ -102,6 +102,15 @@ describe('controller', function () {
 
 		it('should show completed entries', function () {
 			// TODO: write test
+			var todo = {title: "my todo", complete: true};
+			setUpModel([todo]);
+			subject.setview("#/completed");
+			expect(model.read).toHaveBeenCalledWith(
+				{complete: true},
+				jasmine.any(function)
+			);
+			expect(view.render).toHaveBeenCalledWith("showEntries", [todo]);
+
 
 		});
 	});
