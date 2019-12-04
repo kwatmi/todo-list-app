@@ -274,9 +274,9 @@ describe('controller', function () {
 	describe('element removal', function () {
 
 		beforeEach(function(){
-			setUpModel (title:"my todo", completed:true, id:37);
+			setUpModel ([{ title: "my todo", completed:true, id:37}]);
 			subject.setView("");
-			view.trigger("itemRemove", id: 37);
+			view.trigger("itemRemove", {id: 37});
 		});
 		it('should remove an entry from the model', function () {
 			// TODO: write test
