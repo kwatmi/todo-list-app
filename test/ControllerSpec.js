@@ -207,12 +207,13 @@ describe('controller', function () {
 
 		it('should update the view', function () {
 			// TODO: write test
-			expect(view.render).toHaveBeenCalledWith('elementCompleted');
+			expect(view.render).toHaveBeenCalledWith("elementComplete", {
 			id:42,
-			completed:true;
-			expect(view.render).toHaveBeenCalledWith("elementCompleted");
+			completed:true
+		});
+			expect(view.render).toHaveBeenCalledWith("elementComplete",{
 			id:43,
-			completed: true;
+			completed: true
 
 		});
 	});
