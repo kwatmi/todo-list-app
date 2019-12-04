@@ -175,9 +175,22 @@ describe('controller', function () {
 
 	describe('toggle all', function () {
 
-		
+		beforeEach(function(){
+			var todos = [
+				{title: "one todo", completed: false, id: 42},
+				{title: "another todo", completed:false, id:43}
+
+
+			];
+
+			setUpModel (todos);
+			subject.setView("");
+			view.trigger("toggleAll", {completed: true});
+
+		});
 		it('should toggle all todos to completed', function () {
 			// TODO: write test
+			
 		 
 		});
 
