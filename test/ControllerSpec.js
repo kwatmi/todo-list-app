@@ -219,6 +219,9 @@ describe('controller', function () {
 	});
 
 	describe('new todo', function () {
+
+		setUpModel([]);
+			subject.setView("");
 		it('should add a new todo to the model', function () {
 			// TODO: write test
 			setUpModel([]);
