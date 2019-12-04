@@ -107,7 +107,7 @@ describe('controller', function () {
 			subject.setview("#/completed");
 			expect(model.read).toHaveBeenCalledWith(
 				{complete: true},
-				jasmine.any(function)
+				jasmine.any(Function)
 			);
 			expect(view.render).toHaveBeenCalledWith("showEntries", [todo]);
 
@@ -159,6 +159,7 @@ describe('controller', function () {
 
 	it('should highlight "All" filter by default', function () {
 		// TODO: write test
+		
 	});
 
 	it('should highlight "Active" filter when switching to active view', function () {
