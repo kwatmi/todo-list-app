@@ -104,9 +104,9 @@ describe('controller', function () {
 			// TODO: write test
 			var todo = {title: "my todo", complete: true};
 			setUpModel([todo]);
-			subject.setview("#/completed");
+			subject.setView("#/completed");
 			expect(model.read).toHaveBeenCalledWith(
-				{complete: true},
+				{completed: true},
 				jasmine.any(Function)
 			);
 			expect(view.render).toHaveBeenCalledWith("showEntries", [todo]);
@@ -159,16 +159,26 @@ describe('controller', function () {
 
 	it('should highlight "All" filter by default', function () {
 		// TODO: write test
-		
+		setUpModel([]);
+		subject.setView("");
+		expect(view.render).toHaveBeenCalledWith("setFilter", "");
 	});
 
 	it('should highlight "Active" filter when switching to active view', function () {
 		// TODO: write test
+		setUpModel([]);
+		subject.setView("#/active");
+		expect(view.render).toHaveBeenCalledWith("setFilter", "active");
+		
+		
 	});
 
 	describe('toggle all', function () {
+
+		
 		it('should toggle all todos to completed', function () {
 			// TODO: write test
+		 
 		});
 
 		it('should update the view', function () {
