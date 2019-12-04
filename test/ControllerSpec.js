@@ -190,7 +190,18 @@ describe('controller', function () {
 		});
 		it('should toggle all todos to completed', function () {
 			// TODO: write test
-			
+			expect (model.update).toHaveBeenCalledWith(
+				42,
+				{completed: true},
+				jasmine.any(Function)
+			);
+
+			expect(model.update).toHaveBeenCalledWith(
+				43,
+				{completed: true},
+				jasmine.any(Function)
+			);
+
 		 
 		});
 
