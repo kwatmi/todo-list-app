@@ -221,6 +221,13 @@ describe('controller', function () {
 	describe('new todo', function () {
 		it('should add a new todo to the model', function () {
 			// TODO: write test
+			setUpModel([]);
+			subject.setView("");
+			 view.trigger("newTodo", "a new todo");
+			 expect(model.create).toHaveBeenCalledWith(
+				 "a new todo",
+
+			 );
 		});
 
 		it('should add a new todo to the view', function () {
