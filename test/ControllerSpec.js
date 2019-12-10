@@ -268,8 +268,15 @@ describe('controller', function () {
 	});
 
 	describe('element removal', function () {
+		//  added by me 
+		beforeEach(function() {
+			setUpModel([{ title: "my todo", completed: true, id: 37 }]);
+			subject.setView("");
+			view.trigger("itemRemove", { id: 37 });
+		  });
 		it('should remove an entry from the model', function () {
 			// TODO: write test
+			expect(model.remove).toHaveBeenCalledWith(37, jasmine.any(Function));
 		});
 
 		it('should remove an entry from the view', function () {
