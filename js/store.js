@@ -46,14 +46,17 @@
 
 		var todos = JSON.parse(localStorage[this._dbName]).todos;
 
-		callback.call(this, todos.filter(function (todo) {
+		callback.call(
+			this, 
+			todos.filter(function (todo) {
 			for (var q in query) {
 				if (query[q] !== todo[q]) {
 					return false;
 				}
 			}
 			return true;
-		}));
+		})
+		);
 	};
 
 	/**
@@ -78,7 +81,6 @@
 		var data = JSON.parse(localStorage[this._dbName]);
 		// var todos = data.todos;  edit by me 
 		var {todos}= data;
-
 		callback = callback || function () {};
 
 		// If an ID was actually given, find the item and update each property
@@ -95,17 +97,15 @@
 			callback.call(this, todos);
 		  } else {
 		// Generate an ID
+
 	    var newId = ""; 
 		var charset = "0123456789";
 		// set id to false 
 		let isUnique = false;
-
-
 		//  removed to fix id bug
         // for (var i = 0; i < 6; i++) {
      	// 	newId += charset.charAt(Math.floor(Math.random() * charset.length));
 		// }
-
 		while (!isUnique) {
 			for (var i = 0; i < 6; i++) {
 			  newId += charset.charAt(Math.floor(Math.random() * charset.length));
@@ -116,8 +116,7 @@
 				isUnique = false;
 			  }
 			});
-
-		} 
+			} 
   		// Assign an ID
 			updateData.id = parseInt(newId);
     
