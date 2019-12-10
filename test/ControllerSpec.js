@@ -218,8 +218,18 @@ describe('controller', function () {
 	});
 
 	describe('new todo', function () {
+		// added by me 
+		beforeEach(function() {
+			setUpModel([]);
+			subject.setView("");
+		  });
 		it('should add a new todo to the model', function () {
 			// TODO: write test
+			view.trigger("newTodo", "a new todo");
+			expect(model.create).toHaveBeenCalledWith(
+				"a new todo",
+				jasmine.any(Function)
+			);
 		});
 
 		it('should add a new todo to the view', function () {
